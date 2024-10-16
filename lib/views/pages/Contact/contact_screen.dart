@@ -111,7 +111,8 @@ class ContactGrid extends StatelessWidget {
               children: [
                 SvgPicture.asset(
                   contacts[index]['icon'],
-                  height: 55,
+                  height: 50,
+                  width: 50,
                 ),
                 const SizedBox(height: 10),
                 Column(

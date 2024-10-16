@@ -1,4 +1,5 @@
-import 'package:bullion/pages/Rate%20alert/widgets/buy_button.dart';
+
+import 'package:bullion/views/pages/Rate%20alert/widgets/buy_button.dart';
 import 'package:circular_seek_bar/circular_seek_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -186,27 +187,24 @@ class RateAlertScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            const SizedBox(
-                              width: 290,
-                              child: CircularSeekBar(
-                                interactive: true,
-                                trackColor: Color(0xff141414),
-                                width: double.infinity,
-                                height: 250,
-                                progress: 50,
-                                progressColor: Colors.transparent,
-                                barWidth: 35,
-                                startAngle: 90,
-                                sweepAngle: 180,
-                                strokeCap: StrokeCap.round,
-                                innerThumbRadius: 16,
-                                innerThumbColor: Color(0xffD4AF37),
+                            CircularSeekBar(
+                              interactive: true,
+                              trackColor: Color(0xff141414),
+                              width: 270,
+                              height: 250,
+                              progress: 50,
+                              progressColor: Colors.transparent,
+                              barWidth: 35,
+                              startAngle: 90,
+                              sweepAngle: 180,
+                              strokeCap: StrokeCap.round,
+                              innerThumbRadius: 16,
+                              innerThumbColor: Color(0xffD4AF37),
 
-                                // progressGradientColors: [Colors.blue, Colors.indigo, Colors.purple],
-                                // dashWidth: 0,
-                                // dashGap: 15,
-                                animation: false,
-                              ),
+                              // progressGradientColors: [Colors.blue, Colors.indigo, Colors.purple],
+                              // dashWidth: 0,
+                              // dashGap: 15,
+                              animation: false,
                             ),
                           ],
                         ),

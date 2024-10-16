@@ -1,5 +1,5 @@
-import 'package:bullion/pages/Spot/widgets/commodity_table.dart';
-import 'package:bullion/pages/Spot/widgets/spot_rate_table.dart';
+import 'package:bullion/views/pages/Spot/widgets/commodity_table.dart';
+import 'package:bullion/views/pages/Spot/widgets/spot_rate_table.dart';
 import 'package:flutter/material.dart';
 
 class SpotScreen extends StatelessWidget {

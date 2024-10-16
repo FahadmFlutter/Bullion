@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:bullion/pages/Live%20chart/widgets/bid_ask_live_card.dart';
+import 'package:bullion/views/pages/Live%20chart/widgets/bid_ask_live_card.dart';
 import 'package:flutter/material.dart';
 import 'package:candlesticks/candlesticks.dart';
 import 'package:http/http.dart' as http;

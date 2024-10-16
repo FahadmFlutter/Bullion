@@ -1,9 +1,11 @@
-import 'package:bullion/pages/Contact/contact_screen.dart';
-import 'package:bullion/pages/Live%20chart/live_chart_screen.dart';
-import 'package:bullion/pages/Rate%20alert/rate_alert_screen.dart';
-import 'package:bullion/pages/Settings/settings_screen.dart';
-import 'package:bullion/pages/Spot/spot_screen.dart';
+
 import 'package:flutter/material.dart';
+
+import '../views/pages/Contact/contact_screen.dart';
+import '../views/pages/Live chart/live_chart_screen.dart';
+import '../views/pages/Rate alert/rate_alert_screen.dart';
+import '../views/pages/Settings/settings_screen.dart';
+import '../views/pages/Spot/spot_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
