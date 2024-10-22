@@ -1,6 +1,9 @@
+// ignore_for_file: unused_local_variable
+
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -12,19 +15,20 @@ class ApiClient {
     Response response;
 
     String url = path;
-    print(url);
+    if (kDebugMode) {
+      print(url);
+    }
 // Obtain shared preferences.
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    String token= prefs.getString("Token").toString();
+    String token = prefs.getString("Token").toString();
     final nullableHeaderParams = (headerParams.isEmpty) ? null : headerParams;
-    print(body);
+    if (kDebugMode) {
+      print(body);
+    }
     switch (method) {
       case "POST":
         response = await post(Uri.parse(url),
-            headers: {
-              "Authorization":'Bearer ${token}'
-            },
-            body: body);
+            headers: {"Authorization": 'Bearer $token'}, body: body);
 
         break;
       case "PUT":
@@ -35,7 +39,8 @@ class ApiClient {
             body: body);
         break;
       case "DELETE":
-        response = await delete(Uri.parse(url), headers: { "Authorization":'Bearer ${token}'}, body: body);
+        response = await delete(Uri.parse(url),
+            headers: {"Authorization": 'Bearer $token'}, body: body);
         break;
       case "POST_":
         response = await post(
@@ -54,9 +59,7 @@ class ApiClient {
       case "GET":
         response = await get(
           Uri.parse(url),
-          headers: {
-            "Authorization":'Bearer ${token}'
-          },
+          headers: {"Authorization": 'Bearer $token'},
         );
 
         break;
@@ -81,14 +84,14 @@ class ApiClient {
         });
     }
 
-    print('status of $path =>' + (response.statusCode).toString());
-    print(response.body);
+    if (kDebugMode) {
+      print('status of $path =>${response.statusCode}');
+    }
+    if (kDebugMode) {
+      print(response.body);
+    }
     if (response.statusCode >= 400) {
-      log(path +
-          ' : ' +
-          response.statusCode.toString() +
-          ' : ' +
-          response.body);
+      log('$path : ${response.statusCode} : ${response.body}');
 
       throw ApiException(_decodeBodyBytes(response), response.statusCode);
     }

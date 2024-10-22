@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Bullion',
         theme: ThemeData.dark().copyWith(
-          scaffoldBackgroundColor: const Color(0xFF231F20),
+          scaffoldBackgroundColor: const Color(0xFF231F20)
         ),
         debugShowCheckedModeBanner: false,
         home: Splash(),

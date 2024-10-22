@@ -1,3 +1,4 @@
+import 'package:bullion/views/pages/Settings/wish%20list/wish_list_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -85,6 +86,7 @@ class SettingsScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final item = menuItems[index];
                     return ListTile(
+                    splashColor: Color(0xFF231F20),
                       leading: CircleAvatar(
                         radius: 27.5,
                         backgroundColor: const Color(0xFF131313),
@@ -119,6 +121,19 @@ class SettingsScreen extends StatelessWidget {
                           ),
                         ],
                       ),
+                      onTap: () {
+                        // Only navigate if the tapped index is 0 (first element)
+                        if (index == 0) {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => WishListScreen(
+                                title: item['title']!,
+                              ),
+                            ),
+                          );
+                        }
+                      },
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) {

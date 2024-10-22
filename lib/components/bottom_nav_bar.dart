@@ -29,10 +29,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       body: screens[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-
         backgroundColor: const Color(0xFF131313),
         currentIndex: selectedIndex,
         type: BottomNavigationBarType.fixed,
+        enableFeedback: true,
         selectedIconTheme: const IconThemeData(color:Color(0xFFD4AF37) ),
         unselectedIconTheme: const IconThemeData(color: Colors.grey),
         iconSize: 30,

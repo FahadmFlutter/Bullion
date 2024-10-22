@@ -1,6 +1,7 @@
 
 import 'package:bullion/Repository/API/register_api.dart';
 import 'package:bullion/Repository/Models/register_model.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'register_event.dart';
@@ -21,7 +22,9 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         );
         emit(RegisterLoaded());
       } catch (e) {
-        print(e);
+        if (kDebugMode) {
+          print(e);
+        }
         emit(RegisterError());
       }
     });

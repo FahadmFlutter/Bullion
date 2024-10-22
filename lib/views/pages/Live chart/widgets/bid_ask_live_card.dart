@@ -7,14 +7,19 @@ class BideAskLive extends StatelessWidget {
   final bool isUp;
 
   const BideAskLive({
-    super.key, required this.title, required this.mText, required this.sText, required this.isUp,
+    super.key,
+    required this.title,
+    required this.mText,
+    required this.sText,
+    required this.isUp,
   });
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             title,
@@ -28,7 +33,7 @@ class BideAskLive extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 7),
+            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 7),
             child: Container(
               width: 108,
               height: 55.78,
@@ -67,7 +72,7 @@ class BideAskLive extends StatelessWidget {
                         ),
                       ),
                     ),
-                    child:  Center(
+                    child: Center(
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -78,7 +83,8 @@ class BideAskLive extends StatelessWidget {
                               width: 15,
                               height: 10,
                               decoration: ShapeDecoration(
-                                color: isUp == false ? Colors.red : Colors.green,
+                                color:
+                                    isUp == false ? Colors.red : Colors.green,
                                 shape: const StarBorder.polygon(sides: 3),
                               ),
                             ),

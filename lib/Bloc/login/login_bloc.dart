@@ -1,5 +1,5 @@
 import 'package:bullion/Repository/Models/login_model.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../Repository/API/login_api.dart';
@@ -22,7 +22,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         );
         emit(LoginBlocLoaded());
       } catch (e) {
-        print(e);
+        if (kDebugMode) {
+          print(e);
+        }
         emit(LoginBlocError());
       }
     });

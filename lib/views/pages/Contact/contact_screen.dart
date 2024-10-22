@@ -59,7 +59,8 @@ class ContactScreen extends StatelessWidget {
 }
 
 class ContactGrid extends StatelessWidget {
-   ContactGrid({super.key});
+  ContactGrid({super.key});
+
   final List<Map<String, dynamic>> contacts = [
     {
       'icon': 'assets/icons/call.svg',
@@ -82,8 +83,6 @@ class ContactGrid extends StatelessWidget {
       'subtitle': 'Reach us at',
     },
   ];
-
-
 
   @override
   Widget build(BuildContext context) {
