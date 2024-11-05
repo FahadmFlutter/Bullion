@@ -1,4 +1,6 @@
+import 'package:bullion/main.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BidAskCardGold extends StatefulWidget {
   final String largText;
@@ -18,13 +20,13 @@ class _BidAskCardGoldState extends State<BidAskCardGold> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 89,
-      height: 55.78,
+      width: 89.w,
+      height: 55.78.h,
       decoration: ShapeDecoration(
         color: const Color(0xFF131313),
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 2, color: Color(0xFF231F20)),
-          borderRadius: BorderRadius.circular(10),
+          side:  BorderSide(width: 2.w, color: Color(0xFF231F20)),
+          borderRadius: BorderRadius.circular(10.r),
         ),
       ),
       child: Column(
@@ -34,36 +36,32 @@ class _BidAskCardGoldState extends State<BidAskCardGold> {
             child: Center(
               child: Text(
                 widget.largText,
-                style: const TextStyle(
+                style:  TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
-                  fontFamily: 'Inter',
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w700,
-                  height: 0,
                 ),
               ),
             ),
           ),
           Container(
-            width: 89,
-            height: 16,
-            decoration: const ShapeDecoration(
+            width: 89.w,
+            height: 16.h,
+            decoration:  ShapeDecoration(
               color: Color(0xFF231F20),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
-                  bottom: Radius.circular(5),
+                  bottom: Radius.circular(5.r),
                 ),
               ),
             ),
             child: Center(
               child: Text(
                 widget.smallText,
-                style: const TextStyle(
+                style:  TextStyle(
                   color: Colors.white,
-                  fontSize: 8,
-                  fontFamily: 'Inter',
+                  fontSize: 8.sp,
                   fontWeight: FontWeight.w400,
-                  height: 0,
                 ),
               ),
             ),
@@ -89,13 +87,13 @@ class _BidAskCardSilverState extends State<BidAskCardSilver> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 89,
-      height: 37,
+      width: 89.w,
+      height: 37.h,
       decoration: ShapeDecoration(
         color: const Color(0xFF131313),
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 2, color: Color(0xFF231F20)),
-          borderRadius: BorderRadius.circular(10),
+          side:  BorderSide(width: 2.w, color: Color(0xFF231F20)),
+          borderRadius: BorderRadius.circular(10.r),
         ),
       ),
       child: Column(
@@ -105,36 +103,32 @@ class _BidAskCardSilverState extends State<BidAskCardSilver> {
             child: Center(
               child: Text(
                 widget.largText,
-                style: const TextStyle(
+                style:  TextStyle(
                   color: Colors.white,
-                  fontSize: 10,
-                  fontFamily: 'Inter',
+                  fontSize: 10.sp,
                   fontWeight: FontWeight.w700,
-                  height: 0,
                 ),
               ),
             ),
           ),
           Container(
-            width: 89,
-            height: 10,
-            decoration: const ShapeDecoration(
+            width: 89.w,
+            height: 10.h,
+            decoration:  ShapeDecoration(
               color: Color(0xFF231F20),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
-                  bottom: Radius.circular(5),
+                  bottom: Radius.circular(5.r),
                 ),
               ),
             ),
             child: Center(
               child: Text(
                 widget.smallText,
-                style: const TextStyle(
+                style:  TextStyle(
                   color: Colors.white,
-                  fontSize: 6,
-                  fontFamily: 'Inter',
+                  fontSize: 6.sp,
                   fontWeight: FontWeight.w400,
-                  height: 0,
                 ),
               ),
             ),

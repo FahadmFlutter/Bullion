@@ -44,6 +44,10 @@ dependencies:
   dio:
   shared_preferences:
   url_launcher: ^6.3.1
+  intl:
+  flutter_screenutil: ^5.9.3
+  shimmer: ^3.0.0
+  marquee: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +74,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/icons/
+    - assets/images/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

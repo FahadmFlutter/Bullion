@@ -1,12 +1,14 @@
+import 'package:bullion/main.dart';
 import 'package:bullion/views/register/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../components/bottom_nav_bar.dart';
 
 
 class Splash extends StatefulWidget {
-  const Splash({Key? key}) : super(key: key);
+  const Splash({super.key});
 
   @override
   State<Splash> createState() => _SplashState();
@@ -38,7 +40,7 @@ class _SplashState extends State<Splash> {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Color(0xffD4AF37),
-                fontSize: 65,
+                fontSize: 65.sp,
                 fontFamily: 'Gilroy-Medium',
                 fontWeight: FontWeight.bold,
               ),
@@ -48,10 +50,10 @@ class _SplashState extends State<Splash> {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 14,
+                fontSize: 14.sp,
                 fontFamily: 'Gilroy-Medium',
                 fontWeight: FontWeight.w400,
-                letterSpacing:4.5,
+                letterSpacing:4.5.sp,
               ),
             ),
           ],

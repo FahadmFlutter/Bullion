@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WishListScreen extends StatefulWidget {
   final String title;
@@ -18,7 +19,7 @@ class _WishListScreenState extends State<WishListScreen> {
     return SafeArea(
       child: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          padding:  EdgeInsets.symmetric(horizontal: 20.0.w),
           child: Column(
             children: [
               Row(
@@ -26,12 +27,12 @@ class _WishListScreenState extends State<WishListScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(14.0),
+                    padding: EdgeInsets.all(14.0.w),
                     child: GestureDetector(
                       onTap: () => Navigator.of(context).pop(),
                       child: Container(
-                        width: 40,
-                        height: 40,
+                        width: 40.w,
+                        height: 40.h,
                         decoration: ShapeDecoration(
                           color: Color(0xFFD9D9D9),
                           shape: OvalBorder(),
@@ -40,7 +41,7 @@ class _WishListScreenState extends State<WishListScreen> {
                           child: Icon(
                             Icons.keyboard_arrow_left_outlined,
                             color: Color(0xFF131313),
-                            size: 40,
+                            size: 40.sp,
                           ),
                         ),
                       ),
@@ -50,28 +51,26 @@ class _WishListScreenState extends State<WishListScreen> {
                     widget.title,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 24,
-                      fontFamily: 'Inter',
+                      fontSize: 24.sp,
                       fontWeight: FontWeight.w700,
-                      height: 0,
                     ),
                   )
                 ],
               ),
               SizedBox(
-                height: 13,
+                height: 13.h,
               ),
               Expanded(
                 child: ListView.separated(
-                  itemCount: 2,
+                  itemCount: 5,
                   itemBuilder: (context, index) {
                     return Container(
                       width: double.infinity,
-                      height: 91,
+                      height: 91.h,
                       decoration: ShapeDecoration(
                         color: Color(0xFF131313),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(10.r),
                         ),
                         shadows: [
                           BoxShadow(
@@ -86,25 +85,25 @@ class _WishListScreenState extends State<WishListScreen> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(4.0),
+                            padding:  EdgeInsets.all(4.0.w),
                             child: Container(
-                              width: 83,
-                              height: 83,
+                              width: 83.w,
+                              height: 83.h,
                               decoration: ShapeDecoration(
                                 image: DecorationImage(
-                                  image: NetworkImage(
-                                      "https://via.placeholder.com/83x83"),
+                                  image: AssetImage(
+                                      "assets/images/image.png"),
                                   fit: BoxFit.cover,
                                 ),
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
+                                  borderRadius: BorderRadius.circular(10.r),
                                 ),
                               ),
                             ),
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.all(10.0),
+                              padding:  EdgeInsets.all(10.0.w),
                               child: Column(
                                 mainAxisAlignment:
                                 MainAxisAlignment.spaceBetween,
@@ -120,8 +119,7 @@ class _WishListScreenState extends State<WishListScreen> {
                                         'Necklace Sparking Diamond',
                                         style: TextStyle(
                                           color: Colors.white,
-                                          fontSize: 12,
-                                          fontFamily: 'Inter',
+                                          fontSize: 12.sp,
                                           fontWeight: FontWeight.w400,
                                         ),
                                       ),
@@ -138,20 +136,16 @@ class _WishListScreenState extends State<WishListScreen> {
                                           text: '2344.00',
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 12,
-                                            fontFamily: 'Inter',
+                                            fontSize: 12.sp,
                                             fontWeight: FontWeight.w600,
-                                            height: 0,
                                           ),
                                         ),
                                         TextSpan(
                                           text: 'AED',
                                           style: TextStyle(
                                             color: Color(0xFFD4AF37),
-                                            fontSize: 12,
-                                            fontFamily: 'Inter',
+                                            fontSize: 12.sp,
                                             fontWeight: FontWeight.w600,
-                                            height: 0,
                                           ),
                                         ),
                                       ],
@@ -168,7 +162,7 @@ class _WishListScreenState extends State<WishListScreen> {
                   },
                   separatorBuilder: (context, index) {
                     return SizedBox(
-                      height: 20,
+                      height: 20.h,
                     );
                   },
                 ),

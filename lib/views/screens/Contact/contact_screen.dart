@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -11,46 +12,38 @@ class ContactScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Expanded(flex: 1, child: SizedBox()),
-              Expanded(
-                flex: 1,
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      const Text(
-                        'Customer Support',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      Text(
-                        '24/7',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white.withOpacity(0.1),
-                          fontSize: 36,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ],
+          padding: EdgeInsets.symmetric(horizontal: 20.0.w),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+
+                Text(
+                  'Customer Support',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
-              ),
-              Expanded(flex: 3, child: ContactGrid()),
-              const Expanded(flex: 1, child: SizedBox())
-            ],
+                Text(
+                  '24/7',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white.withOpacity(0.1),
+                    fontSize: 36.sp,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                SizedBox(height: 50.h,),
+                SizedBox(
+                  width: 325.w,
+                  height: 325.w,
+                    child: ContactGrid()),
+              ],
+            ),
           ),
         ),
       ),
@@ -98,12 +91,12 @@ class ContactGrid extends StatelessWidget {
         uri = Uri(
           scheme: 'mailto',
           path: 'example@gmail.com',
-          query: 'subject=${Uri.encodeComponent('Hello Flutter')}&body=${Uri.encodeComponent('Hi! I\'m a Flutter Developer')}',
+          query:
+              'subject=${Uri.encodeComponent('Hello Flutter')}&body=${Uri.encodeComponent('Hi! I\'m a Flutter Developer')}',
         );
 
         break;
       case 'whatsapp':
-
         uri = Uri.parse(
           'https://wa.me/+917994770085?text=${Uri.encodeQueryComponent('Hello, this is a test message from Flutter!')}',
         );
@@ -115,7 +108,8 @@ class ContactGrid extends StatelessWidget {
         );
         break;
       case 'location':
-        uri = Uri.parse('https://www.google.com/maps/search/?api=1&query=10.995367,75.982189');
+        uri = Uri.parse(
+            'https://www.google.com/maps/search/?api=1&query=10.995367,75.982189');
         break;
       default:
         print('Invalid action');
@@ -131,7 +125,6 @@ class ContactGrid extends StatelessWidget {
         print('Could not launch $uri');
       }
     }
-
   }
 
   @override
@@ -161,11 +154,13 @@ class ContactGrid extends StatelessWidget {
               }
             },
             child: Container(
-              padding: const EdgeInsets.all(16),
+              width: 154.w,
+              height: 154.w,
+              padding: EdgeInsets.all(16.w),
               decoration: ShapeDecoration(
                 color: const Color(0xFF131313),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(22),
+                  borderRadius: BorderRadius.circular(22.r),
                 ),
               ),
               child: Column(
@@ -173,29 +168,27 @@ class ContactGrid extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SvgPicture.asset(
-                    contact['icon'] ?? '', // Provide a fallback if icon is null
-                    height: 50,
-                    width: 50,
+                    contact['icon'], // Provide a fallback if icon is null
+                    height: 50.w,
+                    width: 50.w,
                   ),
                   const SizedBox(height: 10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        contact['title'] ?? 'Unknown', // Fallback for title
-                        style: const TextStyle(
+                        contact['title'], // Fallback for title
+                        style: TextStyle(
                           color: Color(0xB2FBF4E4),
-                          fontSize: 20,
-                          fontFamily: 'Inter',
+                          fontSize: 20.sp,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
                       Text(
-                        contact['subtitle'] ?? '', // Fallback for subtitle
-                        style: const TextStyle(
+                        contact['subtitle'], // Fallback for subtitle
+                        style: TextStyle(
                           color: Color(0x7FFBF4E4),
-                          fontSize: 10,
-                          fontFamily: 'Inter',
+                          fontSize: 10.sp,
                           fontWeight: FontWeight.w400,
                         ),
                       ),

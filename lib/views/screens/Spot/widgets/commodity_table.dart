@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CommodityTable extends StatelessWidget {
   const CommodityTable({
@@ -24,16 +25,16 @@ class CommodityTable extends StatelessWidget {
         children: [
           Container(
             width: double.infinity,
-            height: 33,
+            height: 33.h,
             decoration: ShapeDecoration(
               color: const Color(0xFF231F20),
               shape: RoundedRectangleBorder(
-                side: const BorderSide(width: 2, color: Color(0xFF131313)),
-                borderRadius: BorderRadius.circular(10),
+                side:  BorderSide(width: 2.w, color: Color(0xFF131313)),
+                borderRadius: BorderRadius.circular(10.r),
               ),
             ),
-            child: const Padding(
-              padding: EdgeInsets.only(left: 16.0, right: 10),
+            child:  Padding(
+              padding: EdgeInsets.only(left: 16.0.w, right: 10.w),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -42,33 +43,29 @@ class CommodityTable extends StatelessWidget {
                       'COMMODITY',
                       style: TextStyle(
                         color: Color(0xFFD4AF37),
-                        fontSize: 12,
-                        fontFamily: 'Inter',
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w700,
-                        height: 0,
                       ),
                     ),
                   ),
                   SizedBox(
-                    width: 89,
+                    width: 89.w,
                     child: Center(
                       child: Text(
                         'WEIGHT',
                         style: TextStyle(
                           color: Color(0xFFD4AF37),
-                          fontSize: 12,
-                          fontFamily: 'Inter',
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
-                          height: 0,
                         ),
                       ),
                     ),
                   ),
                   SizedBox(
-                    width: 5,
+                    width: 5.w,
                   ),
                   SizedBox(
-                    width: 100,
+                    width: 100.w,
                     child: Center(
                       child: Text.rich(
                         TextSpan(
@@ -77,20 +74,16 @@ class CommodityTable extends StatelessWidget {
                               text: 'PRICE ',
                               style: TextStyle(
                                 color: Color(0xFFD4AF37),
-                                fontSize: 12,
-                                fontFamily: 'Inter',
+                                fontSize: 12.sp,
                                 fontWeight: FontWeight.w700,
-                                height: 0,
                               ),
                             ),
                             TextSpan(
                               text: 'AED',
                               style: TextStyle(
                                 color: Color(0xFFD4AF37),
-                                fontSize: 10,
-                                fontFamily: 'Inter',
+                                fontSize: 10.sp,
                                 fontWeight: FontWeight.w700,
-                                height: 0,
                               ),
                             ),
                           ],
@@ -103,8 +96,8 @@ class CommodityTable extends StatelessWidget {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 17.0,vertical: 8),
+           Padding(
+            padding: EdgeInsets.symmetric(horizontal: 17.0.w,vertical: 8.h),
             child: Column(
               children: [
                 /// ///// /// / // / // // / / /
@@ -164,7 +157,7 @@ class CommodityRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      padding:  EdgeInsets.symmetric(vertical: 8.0.h),
       child: Row(
         children: [
           Expanded(
@@ -175,20 +168,16 @@ class CommodityRow extends StatelessWidget {
                     text: '$title ',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 16,
-                      fontFamily: 'Inter',
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w700,
-                      height: 0,
                     ),
                   ),
                   TextSpan(
                     text: sTitle,
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10,
-                      fontFamily: 'Inter',
+                      fontSize: 10.sp,
                       fontWeight: FontWeight.w700,
-                      height: 0,
                     ),
                   ),
                 ],
@@ -196,31 +185,27 @@ class CommodityRow extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 84,
+            width: 84.w,
             child: Text(
               weight,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 16,
-                fontFamily: 'Inter',
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
-                height: 0,
               ),
             ),
           ),
           SizedBox(
-            width: 10,
+            width: 10.w,
           ),
           SizedBox(
-            width: 75,
+            width: 75.w,
             child: Text(
               '$price',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 16,
-                fontFamily: 'Inter',
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w700,
-                height: 0,
               ),
             ),
           ),

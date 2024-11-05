@@ -11,72 +11,69 @@ import 'api_exception.dart';
 
 class ApiClient {
   Future<Response> invokeAPI(String path, String method, Object? body) async {
-    Map<String, String> headerParams = {};
+    Map<String, String> headerParams = {
+      'Content-Type': 'application/json', // This ensures you're sending JSON
+    };
     Response response;
 
     String url = path;
     if (kDebugMode) {
       print(url);
     }
-// Obtain shared preferences.
+
+    // Obtain shared preferences
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    String token = prefs.getString("Token").toString();
-    final nullableHeaderParams = (headerParams.isEmpty) ? null : headerParams;
+    String? token = prefs.getString("Token");
+
+    // Add Authorization header if token is available
+    if (token != null && token.isNotEmpty) {
+      headerParams['Authorization'] = 'Bearer $token';
+    }
+
     if (kDebugMode) {
       print(body);
     }
+
     switch (method) {
       case "POST":
-        response = await post(Uri.parse(url),
-            headers: {"Authorization": 'Bearer $token'}, body: body);
-
+        response = await post(
+          Uri.parse(url),
+          headers: headerParams,
+          body: body,
+        );
         break;
+
       case "PUT":
-        response = await put(Uri.parse(url),
-            headers: {
-              'content-Type': 'application/json',
-            },
-            body: body);
-        break;
-      case "DELETE":
-        response = await delete(Uri.parse(url),
-            headers: {"Authorization": 'Bearer $token'}, body: body);
-        break;
-      case "POST_":
-        response = await post(
+        response = await put(
           Uri.parse(url),
-          headers: {'content-Type': 'application/json'},
+          headers: headerParams,
           body: body,
         );
         break;
-      case "GET_":
-        response = await post(
-          Uri.parse(url),
-          headers: {},
-          body: body,
-        );
-        break;
-      case "GET":
-        response = await get(
-          Uri.parse(url),
-          headers: {"Authorization": 'Bearer $token'},
-        );
 
+      case "DELETE":
+        response = await delete(
+          Uri.parse(url),
+          headers: headerParams,
+          body: body,
+        );
         break;
+
       case "PATCH":
         response = await patch(
           Uri.parse(url),
-          headers: {'Content-Type': 'application/json'},
+          headers: headerParams,
           body: body,
         );
         break;
-      case "PATCH1":
-        response = await patch(
+
+      case "GET":
+        response = await get(
           Uri.parse(url),
-          headers: {},
-          body: body,
+          headers: headerParams,
         );
         break;
+
       default:
         response = await get(Uri.parse(url), headers: {
           'Accept': 'application/json',
@@ -85,16 +82,17 @@ class ApiClient {
     }
 
     if (kDebugMode) {
-      print('status of $path =>${response.statusCode}');
+      print('status of $path => ${response.statusCode}');
     }
     if (kDebugMode) {
       print(response.body);
     }
+
     if (response.statusCode >= 400) {
       log('$path : ${response.statusCode} : ${response.body}');
-
       throw ApiException(_decodeBodyBytes(response), response.statusCode);
     }
+
     return response;
   }
 

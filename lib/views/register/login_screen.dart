@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../Bloc/login/login_bloc.dart';
@@ -25,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(30.0),
+          padding: EdgeInsets.symmetric(horizontal: 30.0.h),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,37 +34,34 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Center(
                   child: Container(
-                    width: 113,
-                    height: 113,
+                    width: 113.w,
+                    height: 113.w,
                     decoration: BoxDecoration(
                       color: Colors.grey,
-                      borderRadius: BorderRadius.circular(100)
+                      borderRadius: BorderRadius.circular(100.r)
                     ),
                     child: Center(
                       child: Text(
                         'LOGO',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 12,
-                          fontFamily: 'Inter',
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w900,
-                          height: 0,
                         ),
                       ),
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: 50,
+                  height: 50.h,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 4, left: 40),
+                  padding: EdgeInsets.only(bottom: 4.h, left: 40.w),
                   child: Text(
                     'EMAIL',
                     style: TextStyle(
                       color: Color(0xB2FBF4E4),
-                      fontSize: 10,
-                      fontFamily: 'Inter',
+                      fontSize: 10.sp,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -75,6 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   controller: emailController,
                   cursorColor:  Color(0xffD4AF37),
                   decoration: InputDecoration(
+                    hintText: '"admin@ \'mail\'.com"',
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Color(0xffD4AF37)),
                     ),
@@ -85,18 +84,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 SizedBox(
-                  height: 12,
+                  height: 12.h,
                 ),
                 Padding(
-                  padding: EdgeInsets.only(bottom: 4, left: 40, top: 16),
+                  padding: EdgeInsets.only(bottom: 4.h, left: 40.w, top: 16.h),
                   child: Text(
                     'PASSWORD',
                     style: TextStyle(
                       color: Color(0xB2FBF4E4),
-                      fontSize: 10,
-                      fontFamily: 'Inter',
+                      fontSize: 10.sp,
                       fontWeight: FontWeight.w400,
-                      height: 0,
                     ),
                   ),
                 ),
@@ -106,6 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   controller: passwordController,
                   cursorColor:  Color(0xffD4AF37),
                   decoration: InputDecoration(
+                    hintText: '"password"',
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Color(0xffD4AF37)),
                     ),
@@ -131,15 +129,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 14),
+                  padding: EdgeInsets.symmetric(vertical: 14.h),
                   child: Center(
                     child: Text(
                       'Forgotten your password? ',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Color(0xFFB6B1A6),
-                        fontSize: 10,
-                        fontFamily: 'Inter',
+                        fontSize: 10.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
@@ -186,11 +183,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Center(
                       child: Container(
                         width: double.infinity,
-                        height: 50,
+                        height: 50.h,
                         decoration: ShapeDecoration(
                           color: Color(0xffD4AF37),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(10.r),
                           ),
                         ),
                         child: Center(
@@ -198,10 +195,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             'Log In',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 16,
-                              fontFamily: 'Inter',
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w900,
-                              height: 0,
                             ),
                           ),
                         ),
@@ -285,28 +280,28 @@ class _LoginScreenState extends State<LoginScreen> {
                 // ),
 
 
-                Center(
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => BottomNavBar(),
-                        ),
-                      );
-                    },
-                    child: Text(
-                      'Go Home',
-                      style: TextStyle(
-                        color: Color(0xffD4AF37),
-                        fontSize: 14,
-                        fontFamily: 'Gilroy',
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 0.70,
-                      ),
-                    ),
-                  ),
-                )
+                // Center(
+                //   child: TextButton(
+                //     onPressed: () {
+                //       Navigator.pushReplacement(
+                //         context,
+                //         MaterialPageRoute(
+                //           builder: (context) => BottomNavBar(),
+                //         ),
+                //       );
+                //     },
+                //     child: Text(
+                //       'Go Home',
+                //       style: TextStyle(
+                //         color: Color(0xffD4AF37),
+                //         fontSize: 14,
+                //         fontFamily: 'Gilroy',
+                //         fontWeight: FontWeight.w600,
+                //         letterSpacing: 0.70,
+                //       ),
+                //     ),
+                //   ),
+                // )
               ],
             ),
           ),

@@ -1,5 +1,6 @@
-import 'package:bullion/views/pages/Settings/wish%20list/wish_list_screen.dart';
+import 'package:bullion/views/screens/Settings/wish%20list/wish_list_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 List<Map<String, String>> menuItems = [
@@ -48,52 +49,50 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: EdgeInsets.symmetric(horizontal: 20.0.w),
         child: Column(
           children: [
-            const SizedBox(
-              height: 40,
+             SizedBox(
+              height: 40.h,
             ),
             ListTile(
               leading: SvgPicture.asset(
                 'assets/icons/User_img.svg',
-                width: 55,
-                height: 55,
+                width: 55.w,
+                height: 55.h,
               ),
-              title: const Text(
+              title:  Text(
                 'Guest User',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 20,
-                  fontFamily: 'Inter',
+                  fontSize: 20.sp,
                   fontWeight: FontWeight.w700,
-                  height: 0,
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 2),
+             Padding(
+              padding: EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 2.w),
               child: Divider(
                 color: Color(0xB2FBF4E4),
               ),
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                padding:  EdgeInsets.symmetric(vertical: 8.0.h),
                 child: ListView.separated(
                   physics: const ScrollPhysics(),
                   itemCount: menuItems.length,
                   itemBuilder: (context, index) {
                     final item = menuItems[index];
                     return ListTile(
-                    splashColor: Color(0xFF231F20),
+                      splashColor: Color(0xFF231F20),
                       leading: CircleAvatar(
-                        radius: 27.5,
+                        radius: 27.5.r,
                         backgroundColor: const Color(0xFF131313),
                         child: SvgPicture.asset(
                           item['icon']!,
-                          width: 24,
-                          height: 24,
+                          width: 25.w,
+                          height: 21.w,
                         ),
                       ),
                       title: Column(
@@ -101,22 +100,18 @@ class SettingsScreen extends StatelessWidget {
                         children: [
                           Text(
                             item['title']!,
-                            style: const TextStyle(
+                            style:  TextStyle(
                               color: Colors.white,
-                              fontSize: 16,
-                              fontFamily: 'Inter',
+                              fontSize: 16.sp,
                               fontWeight: FontWeight.w700,
-                              height: 0,
                             ),
                           ),
                           Text(
                             item['subtitle']!,
-                            style: const TextStyle(
+                            style:  TextStyle(
                               color: Colors.white,
-                              fontSize: 8,
-                              fontFamily: 'Inter',
+                              fontSize: 8.sp,
                               fontWeight: FontWeight.w400,
-                              height: 0,
                             ),
                           ),
                         ],
@@ -137,8 +132,8 @@ class SettingsScreen extends StatelessWidget {
                     );
                   },
                   separatorBuilder: (BuildContext context, int index) {
-                    return const SizedBox(
-                      height: 15,
+                    return  SizedBox(
+                      height: 15.h,
                     );
                   },
                 ),

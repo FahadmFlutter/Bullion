@@ -1,11 +1,11 @@
-
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../views/pages/Contact/contact_screen.dart';
-import '../views/pages/Live chart/live_chart_screen.dart';
-import '../views/pages/Rate alert/rate_alert_screen.dart';
-import '../views/pages/Settings/settings_screen.dart';
-import '../views/pages/Spot/spot_screen.dart';
+import '../views/screens/Contact/contact_screen.dart';
+import '../views/screens/Live chart/live_chart_screen.dart';
+import '../views/screens/Rate alert/rate_alert_screen.dart';
+import '../views/screens/Settings/settings_screen.dart';
+import '../views/screens/Spot/spot_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -33,22 +33,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
         currentIndex: selectedIndex,
         type: BottomNavigationBarType.fixed,
         enableFeedback: true,
-        selectedIconTheme: const IconThemeData(color:Color(0xFFD4AF37) ),
+        selectedIconTheme: const IconThemeData(color: Color(0xFFD4AF37)),
         unselectedIconTheme: const IconThemeData(color: Colors.grey),
-        iconSize: 30,
-        selectedLabelStyle: const TextStyle(
+        iconSize: 30.sp,
+        selectedLabelStyle:  TextStyle(
           color: Color(0xFFD4AF37),
-          fontSize: 8,
-          fontFamily: 'Inter',
+          fontSize: 8.sp,
           fontWeight: FontWeight.w400,
-          height: 0,
         ),
-        unselectedLabelStyle: const TextStyle(
+        unselectedLabelStyle:  TextStyle(
           color: Color(0xB2FBF4E4),
-          fontSize: 8,
-          fontFamily: 'Inter',
+          fontSize: 8.sp,
           fontWeight: FontWeight.w400,
-          height: 0,
         ),
         selectedItemColor: const Color(0xFFD4AF37),
         showSelectedLabels: true,
@@ -59,32 +55,37 @@ class _BottomNavBarState extends State<BottomNavBar> {
             selectedIndex = index;
           });
         },
-        items: const [
+        items:  [
           BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.all(4.0),
+                padding: EdgeInsets.all(4.0.w),
                 child: Icon(Icons.notifications),
-              ), label: "Rate Alert"),
+              ),
+              label: "Rate Alert"),
           BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.all(4.0),
+                padding: EdgeInsets.all(4.0.w),
                 child: Icon(Icons.support_agent),
-              ), label: "Contact"),
+              ),
+              label: "Contact"),
           BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.all(4.0),
+                padding: EdgeInsets.all(4.0.w),
                 child: Icon(Icons.home_rounded),
-              ), label: "Spot"),
+              ),
+              label: "Spot"),
           BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.all(4.0),
+                padding: EdgeInsets.all(4.0.w),
                 child: Icon(Icons.insert_chart_outlined),
-              ), label: "Live Chart"),
+              ),
+              label: "Live Chart"),
           BottomNavigationBarItem(
               icon: Padding(
-                padding: EdgeInsets.all(4.0),
+                padding: EdgeInsets.all(4.0.w),
                 child: Icon(Icons.menu),
-              ), label: "More"),
+              ),
+              label: "More"),
         ],
       ),
     );

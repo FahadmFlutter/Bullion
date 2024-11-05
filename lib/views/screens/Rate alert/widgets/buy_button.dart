@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BuyButton extends StatelessWidget {
   final bool isAdd;
@@ -14,10 +15,10 @@ class BuyButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style:  ButtonStyle(
-        padding: WidgetStatePropertyAll( EdgeInsets.symmetric(horizontal: 30, vertical: 9),),
+        padding: WidgetStatePropertyAll( EdgeInsets.symmetric(horizontal: 30.w, vertical: 9.h),),
         backgroundColor: const WidgetStatePropertyAll(Color(0xFF131313)),
         elevation: const WidgetStatePropertyAll(3),
-        side: WidgetStatePropertyAll(BorderSide(color: Colors.white.withOpacity(0.5),width: 1)),
+        side: WidgetStatePropertyAll(BorderSide(color: Colors.white.withOpacity(0.5),width: 1.w)),
         surfaceTintColor: WidgetStateColor.transparent,
         foregroundColor: WidgetStateColor.transparent,
         overlayColor: WidgetStateColor.transparent,
@@ -25,13 +26,11 @@ class BuyButton extends StatelessWidget {
       ),
       onPressed: () {},
       child: Text(
-        '${isAdd ? '+' :''} \$$amount',
-        style: const TextStyle(
+        '${isAdd ? '+' : ''} ${amount < 0 ? '-\$${amount.abs().toStringAsFixed(0)}' : '\$${amount.toStringAsFixed(0)}'}',
+        style:  TextStyle(
           color: Colors.white,
-          fontSize: 20,
-          fontFamily: 'Inter',
+          fontSize: 20.sp,
           fontWeight: FontWeight.w700,
-          height: 0,
         ),
       ),
     );
