@@ -172,7 +172,7 @@ class ContactGrid extends StatelessWidget {
                     height: 50.w,
                     width: 50.w,
                   ),
-                  const SizedBox(height: 10),
+                   SizedBox(height: 10.h),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

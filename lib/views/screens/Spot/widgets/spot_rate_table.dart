@@ -162,10 +162,41 @@ class _SpotRateTableState extends State<SpotRateTable> {
                       // );
                     }
                     if (state is GetAssetsError) {
-                      return Center(
-                        child: Icon(
-                          Icons.error,
-                          color: Colors.red,
+                      // return Center(
+                      //   child: Icon(
+                      //     Icons.error,
+                      //     color: Colors.red,
+                      //   ),
+                      // );
+                      return Shimmer.fromColors(
+                        baseColor: Colors.red.shade300.withOpacity(0.4),
+                        highlightColor: Colors.red.shade100.withOpacity(0.5),
+                        enabled: true,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 80.w,
+                              height: 15.h,
+                              decoration: ShapeDecoration(
+                                color: Colors.red.withOpacity(0.5),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6.r),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 5.h,),
+                            Container(
+                              width: 40.w,
+                              height: 14.h,
+                              decoration: ShapeDecoration(
+                                color: Colors.red.withOpacity(0.5),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6.r),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       );
                     }
@@ -249,9 +280,47 @@ class _SpotRateTableState extends State<SpotRateTable> {
                       // );
                     }
                     if (state is GetAssetsError) {
-                      return BidAskCardGold(
-                        largText: 'NO DATA',
-                        smallText: 'error',
+                      // return BidAskCardGold(
+                      //   largText: 'NO DATA',
+                      //   smallText: 'error',
+                      // );
+                      return Shimmer.fromColors(
+                        baseColor: Colors.red.shade300.withOpacity(0.4),
+                        highlightColor: Colors.red.shade100.withOpacity(0.5),
+                        enabled: true,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 89.w,
+                              height: 55.h,
+                              decoration: ShapeDecoration(
+                                color: Colors.red.withOpacity(0.4),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    width: 89.w,
+                                    height: 16.h,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.red.withOpacity(0.3),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.vertical(
+                                          bottom: Radius.circular(10),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                          ],
+                        ),
                       );
                     }
                     // if (state is GetAssetsLoaded) {
@@ -428,9 +497,47 @@ class _SpotRateTableState extends State<SpotRateTable> {
                       // );
                     }
                     if (state is GetAssetsError) {
-                      return BidAskCardGold(
-                        largText: 'NO DATA',
-                        smallText: 'error',
+                      // return BidAskCardGold(
+                      //   largText: 'NO DATA',
+                      //   smallText: 'error',
+                      // );
+                      return Shimmer.fromColors(
+                        baseColor: Colors.red.shade300.withOpacity(0.4),
+                        highlightColor: Colors.red.shade100.withOpacity(0.5),
+                        enabled: true,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 89.w,
+                              height: 55.h,
+                              decoration: ShapeDecoration(
+                                color: Colors.red.withOpacity(0.4),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    width: 89.w,
+                                    height: 16.h,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.red.withOpacity(0.3),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.vertical(
+                                          bottom: Radius.circular(10),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                          ],
+                        ),
                       );
                     }
                     // if (state is GetAssetsLoaded) {
@@ -609,13 +716,45 @@ class _SpotRateTableState extends State<SpotRateTable> {
                       );
                     }
                     if (state is GetAssetsError) {
-                      return Center(
-                        child: Icon(
-                          Icons.error,
-                          color: Colors.red,
+                      // return Center(
+                      //   child: Icon(
+                      //     Icons.error,
+                      //     color: Colors.red,
+                      //   ),
+                      // );
+                      return Shimmer.fromColors(
+                        baseColor: Colors.red.shade300.withOpacity(0.4),
+                        highlightColor: Colors.red.shade100.withOpacity(0.5),
+                        enabled: true,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 80.w,
+                              height: 12.h,
+                              decoration: ShapeDecoration(
+                                color: Colors.red.withOpacity(0.5),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5.r),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 5.h,),
+                            Container(
+                              width: 40.w,
+                              height: 10.h,
+                              decoration: ShapeDecoration(
+                                color: Colors.red.withOpacity(0.5),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(5.r),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       );
                     }
+
                     if (state is GetAssetsLoaded) {
                       final assets = BlocProvider.of<GetAssetsBloc>(context).getAssetsList.assets;
 
@@ -692,9 +831,47 @@ class _SpotRateTableState extends State<SpotRateTable> {
                       // );
                     }
                     if (state is GetAssetsError) {
-                      return BidAskCardSilver(
-                        largText: 'NO DATA',
-                        smallText: 'error',
+                      // return BidAskCardSilver(
+                      //   largText: 'NO DATA',
+                      //   smallText: 'error',
+                      // );
+                      return Shimmer.fromColors(
+                        baseColor: Colors.red.shade300.withOpacity(0.4),
+                        highlightColor: Colors.red.shade100.withOpacity(0.5),
+                        enabled: true,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 89.w,
+                              height: 37.h,
+                              decoration: ShapeDecoration(
+                                color: Colors.red.withOpacity(0.4),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    width: 89.w,
+                                    height: 10.61.h,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.red.withOpacity(0.3),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.vertical(
+                                          bottom: Radius.circular(10),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                          ],
+                        ),
                       );
                     }
 
@@ -759,9 +936,47 @@ class _SpotRateTableState extends State<SpotRateTable> {
                       );
                     }
                     if (state is GetAssetsError) {
-                      return BidAskCardSilver(
-                        largText: 'NO DATA',
-                        smallText: 'error',
+                      // return BidAskCardSilver(
+                      //   largText: 'NO DATA',
+                      //   smallText: 'error',
+                      // );
+                      return Shimmer.fromColors(
+                        baseColor: Colors.red.shade300.withOpacity(0.4),
+                        highlightColor: Colors.red.shade100.withOpacity(0.5),
+                        enabled: true,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 89.w,
+                              height: 37.h,
+                              decoration: ShapeDecoration(
+                                color: Colors.red.withOpacity(0.4),
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    width: 89.w,
+                                    height: 10.61.h,
+                                    decoration: ShapeDecoration(
+                                      color: Colors.red.withOpacity(0.3),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.vertical(
+                                          bottom: Radius.circular(10),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                          ],
+                        ),
                       );
                     }
                     // if (state is GetAssetsLoaded) {

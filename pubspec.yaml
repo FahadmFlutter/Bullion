@@ -48,6 +48,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   shimmer: ^3.0.0
   marquee: ^2.3.0
+  slide_to_act: ^2.0.2
 
 dev_dependencies:
   flutter_test:
